@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>dekoeky.hello_world</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    
+		<Title>dekoeky Hello World</Title>
+		<Authors>Wesley Van Koeckhoven</Authors>
+		<Company>Wesley Van Koeckhoven</Company>
+		<Description>A .NET client for the Homewizard Energy Api</Description>
+		<PackageProjectUrl>https://github.com/dekoeky/homewizard-energy-api</PackageProjectUrl>
+		<!-- <PackageIcon>128x128.png</PackageIcon> -->
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<!-- <RepositoryUrl>https://github.com/dekoeky/homewizard-energy-api</RepositoryUrl> -->
+		<!-- <RepositoryType>git</RepositoryType> -->
+		<PackageTags>hello-world;test</PackageTags>
+		<Copyright>Copyright (c) Wesley Van Koeckhoven 2023</Copyright>
+		<!-- <PackageLicenseFile>LICENSE</PackageLicenseFile> -->
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+  </PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+</Project>
