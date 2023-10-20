@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dekoeky.hello-world", "deko
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dekoeky.hello-world.tester", "dekoeky.hello-world.tester\dekoeky.hello-world.tester.csproj", "{2909143D-F1E3-4714-B32E-8D3220319687}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dekoeky.hello-world.nuget-consumer", "dekoeky.hello-world.nuget-consumer\dekoeky.hello-world.nuget-consumer.csproj", "{4F303101-E4BF-48A2-ADFD-EE7BDDEA7F62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2909143D-F1E3-4714-B32E-8D3220319687}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2909143D-F1E3-4714-B32E-8D3220319687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2909143D-F1E3-4714-B32E-8D3220319687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F303101-E4BF-48A2-ADFD-EE7BDDEA7F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F303101-E4BF-48A2-ADFD-EE7BDDEA7F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F303101-E4BF-48A2-ADFD-EE7BDDEA7F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F303101-E4BF-48A2-ADFD-EE7BDDEA7F62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
