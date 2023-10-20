@@ -9,15 +9,15 @@
 		<Title>dekoeky Hello World</Title>
 		<Authors>Wesley Van Koeckhoven</Authors>
 		<Company>Wesley Van Koeckhoven</Company>
-		<Description>A .NET client for the Homewizard Energy Api</Description>
-		<PackageProjectUrl>https://github.com/dekoeky/homewizard-energy-api</PackageProjectUrl>
+		<Description>A NuGet package for testing the build and publish of NuGet packages</Description>
+		<PackageProjectUrl>https://github.com/dekoeky/nuget-hello-world</PackageProjectUrl>
 		<!-- <PackageIcon>128x128.png</PackageIcon> -->
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<!-- <RepositoryUrl>https://github.com/dekoeky/homewizard-energy-api</RepositoryUrl> -->
-		<!-- <RepositoryType>git</RepositoryType> -->
+		<RepositoryUrl>https://github.com/dekoeky/nuget-hello-world</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
 		<PackageTags>hello-world;test</PackageTags>
 		<Copyright>Copyright (c) Wesley Van Koeckhoven 2023</Copyright>
-		<!-- <PackageLicenseFile>LICENSE</PackageLicenseFile> -->
+		<PackageLicenseFile>../LICENSE</PackageLicenseFile>
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
