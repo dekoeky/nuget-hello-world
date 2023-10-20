@@ -21,6 +21,11 @@
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
+
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<VersionSuffix>alpha</VersionSuffix>
+	
+
   </PropertyGroup>
 
 	<ItemGroup>
