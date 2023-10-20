@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -33,5 +33,11 @@
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Serilog" Version="3.0.0" />
+	  <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
+	  <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
 	</ItemGroup>
 </Project>
