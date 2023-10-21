@@ -31,6 +31,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: [prepare]
     steps:
+    - name: Test
+      run: | 
+        echo ls:
+        ls
+        echo --------------------------------------------
+        echo tree:
+        tree
+        echo --------------------------------------------
+        
     - name: Restore dependencies
       run: | 
         dotnet restore dekoeky.hello-world
