@@ -13,9 +13,15 @@ on:
         default: Testing        
 
 jobs:
+
   build-and-test:
+    strategy:
+     matrix:
+        os: [ubuntu-latest, windows-latest]
+     
+
     name: Build & Test
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
