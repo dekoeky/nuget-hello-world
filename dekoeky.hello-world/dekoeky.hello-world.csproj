@@ -18,7 +18,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>hello-world;test</PackageTags>
 		<Copyright>Copyright (c) Wesley Van Koeckhoven 2023</Copyright>
-		<PackageLicenseFile>../LICENSE</PackageLicenseFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
@@ -30,6 +30,10 @@
   </PropertyGroup>
 
 	<ItemGroup>
+	  <None Include="..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	  <None Include="..\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
