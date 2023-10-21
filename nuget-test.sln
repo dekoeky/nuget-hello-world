@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dekoeky.hello-world.tester"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dekoeky.hello-world.nuget-consumer", "dekoeky.hello-world.nuget-consumer\dekoeky.hello-world.nuget-consumer.csproj", "{4F303101-E4BF-48A2-ADFD-EE7BDDEA7F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dekoeky.hello-world.tests", "dekoeky.hello-world.tests\dekoeky.hello-world.tests.csproj", "{ADE2AB44-B340-4747-8282-4E4ECC2BB835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dekoeky.hello-world.tests", "dekoeky.hello-world.tests\dekoeky.hello-world.tests.csproj", "{ADE2AB44-B340-4747-8282-4E4ECC2BB835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
