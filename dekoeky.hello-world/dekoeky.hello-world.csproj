@@ -1,10 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0;net8.0</TargetFrameworks>
     <RootNamespace>dekoeky.hello_world</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <langversion>latest</langversion>
     
 		<Title>dekoeky Hello World</Title>
 		<Authors>Wesley Van Koeckhoven</Authors>
@@ -22,7 +23,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
 
-		<VersionPrefix>1.0.1</VersionPrefix>
+    <VersionPrefix>1.0.1</VersionPrefix>
 		<VersionSuffix>alpha</VersionSuffix>
 	
 
