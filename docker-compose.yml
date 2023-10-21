@@ -1,16 +1,19 @@
 
 services:
   net6:
+    image: tests:net6
     build:
       context: .
-      dockerfile: dekoeky.hello-world.tests\net6.0.Dockerfile
+      dockerfile: dekoeky.hello-world.tests/net6.0.Dockerfile
       
   net7:
+    image: tests:net7
     build:
       context: .
-      dockerfile: dekoeky.hello-world.tests\net7.0.Dockerfile
+      dockerfile: dekoeky.hello-world.tests/net7.0.Dockerfile
       
   net8:
+    image: tests:net8
     build:
       context: .
-      dockerfile: dekoeky.hello-world.tests\net8.0.Dockerfile
+      dockerfile: dekoeky.hello-world.tests/net8.0.Dockerfile
