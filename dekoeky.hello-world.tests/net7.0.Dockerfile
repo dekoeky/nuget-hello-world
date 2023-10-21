@@ -3,12 +3,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["dekoeky.hello-world.tests/dekoeky.hello-world.tests.csproj", "dekoeky.hello-world.tests/"]
 COPY ["dekoeky.hello-world/dekoeky.hello-world.csproj", "dekoeky.hello-world/"]
-RUN dotnet restore "./dekoeky.hello-world.tests/./dekoeky.hello-world.tests.csproj"
+RUN dotnet restore "./dekoeky.hello-world.tests/dekoeky.hello-world.tests.csproj"
 COPY . .
 WORKDIR "/src/dekoeky.hello-world.tests"
 RUN dotnet build "./dekoeky.hello-world.tests.csproj" -c $BUILD_CONFIGURATION -f net7.0 -o /app/build
