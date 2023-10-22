@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dekoeky.hello-world" Version="1.0.0" />
+    <PackageReference Include="dekoeky.hello-world" Version="1.0.2-alpha" />
   </ItemGroup>
 <!-- 
   <ItemGroup>
