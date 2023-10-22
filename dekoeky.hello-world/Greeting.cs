@@ -1,23 +1,10 @@
-﻿using Serilog;
+﻿using static dekoeky.hello_world.Logging;
 
 namespace dekoeky.hello_world;
 
 public static class Greeting
 {
-    private static readonly ILogger Logger;
+    public static string Get() => "Hello, World!" + Environment.NewLine + "Greetings, dekoeky";
 
-    static Greeting()
-    {
-        Logger = new LoggerConfiguration()
-            .WriteTo.Console()
-            .CreateLogger();
-    }
-    public static string Get()
-    {
-        return "Hello, World!" + Environment.NewLine + "Greetings, dekoeky";
-    }
-    public static void Perform()
-    {
-        Logger.Information(Get());
-    }
+    public static void Perform() => Logger.Information(Get());
 }
