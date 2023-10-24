@@ -1,0 +1,36 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Print Info Copy
+
+on:
+  workflow_dispatch:    
+
+jobs:
+
+  build-and-test:
+    name: Build & Print Info
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: |
+          6.0.x
+          7.0.x
+          8.0.x
+          
+    - name: Restore dependencies
+      run: | 
+        dotnet restore dekoeky.hello-world
+        
+    - name: Build
+      run: | 
+        dotnet build dekoeky.hello-world --no-restore
+        
+    - name: Print Info
+      run: |
+        ./script/print-assembly-versions.ps1
+      
