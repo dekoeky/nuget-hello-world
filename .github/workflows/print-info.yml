@@ -32,6 +32,5 @@ jobs:
         
     - name: Print Info
       run: |
-        Get-ChildItem -Filter dekoeky*.dll -Recurse | Select-Object -ExpandProperty VersionInfo
-
+        ./script/print-assembly-versions.ps1
       
