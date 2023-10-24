@@ -18,8 +18,8 @@ public class PackageInfo
 
         return new PackageInfo
         {
-            Name = name,
-            Version = version,
+            Name = name!,
+            Version = version!,
         };
     }
 
