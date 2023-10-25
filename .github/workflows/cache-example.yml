@@ -97,14 +97,36 @@ jobs:
             dekoeky.hello-world/bin/**/*.nupkg
             dekoeky.hello-world/bin/**/*.snupkg
 
-  artifact-use-build:
-    name: Re-use Artifact
+  upload-nuget-org:
+    name: Upload to NuGet.org
     runs-on: ubuntu-latest
     needs: [artifact-build]
-
+    
     steps:
       - uses: actions/download-artifact@v2
         with:
           name: packages
       - run: ls .
       - run: tree .
+      - run: |
+          dotnet nuget push "*.nupkg" \
+          --skip-duplicate \
+          -s https://api.nuget.org/v3/index.json \
+          --api-key ${{ secrets.NUGET_API_KEY }}
+
+  upload-github:
+    name: Upload to GitHub
+    runs-on: ubuntu-latest
+    needs: [artifact-build]
+    
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: packages
+      - run: ls .
+      - run: tree .
+      - run: |
+          dotnet nuget push "*.nupkg" \
+          --skip-duplicate \
+          -s https://nuget.pkg.github.com/dekoeky/index.json \
+          --api-key ${{ secrets.GITHUB_TOKEN }}
