@@ -22,7 +22,7 @@
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
-
+		<ContinuousIntegrationBuild>True</ContinuousIntegrationBuild>
     	<VersionPrefix>1.0.5</VersionPrefix>
 		<VersionSuffix>dev-002</VersionSuffix>
 		<UserSecretsId>5c7a50e3-da32-4a20-a8e7-ba42c44aca64</UserSecretsId>
