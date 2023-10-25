@@ -20,6 +20,7 @@ public class PackageInfo
         {
             Name = name!,
             Version = version!,
+            AdditionalDetails = "Hello World",
         };
     }
 
@@ -32,4 +33,5 @@ public class PackageInfo
 
     public string Name { get; private set; } = null!;
     public Version Version { get; private set; } = null!;
+    public string? AdditionalDetails { get; internal set; }
 }
