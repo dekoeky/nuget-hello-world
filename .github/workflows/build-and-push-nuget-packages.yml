@@ -1,0 +1,82 @@
+on:
+  workflow_dispatch:
+
+
+name: Build & Push NuGet Packages
+# run-name: 
+
+jobs:
+  artifact-build:
+    name: Build - With Artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      
+      - name: Setup .NET SDKs
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+      
+      - name: Restore project dependencies
+        run: | 
+          dotnet restore dekoeky.hello-world
+
+      - name: Build project
+        run: | 
+          dotnet build dekoeky.hello-world --no-restore -c Release
+
+      - name: Pack project
+        run: | 
+          dotnet pack dekoeky.hello-world --no-restore -c Release
+
+        #Debug:
+      # - run: ls 
+      # - run: find . -type f \( -name *.nupkg -or -name *.snupkg  \)
+
+      - name: Store the NuGet artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages
+          path: | 
+            dekoeky.hello-world/bin/Release/*.nupkg
+            dekoeky.hello-world/bin/Release/*.snupkg
+
+
+  upload-nuget-org:
+    name: Upload to NuGet.org
+    runs-on: ubuntu-latest
+    needs: [artifact-build]
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: packages
+      # - run: ls .
+      # - run: tree .
+      - run: |
+          dotnet nuget push "*.nupkg" \
+            --skip-duplicate \
+            -s https://api.nuget.org/v3/index.json \
+            --api-key ${{ secrets.NUGET_API_KEY }}
+
+  upload-github:
+    name: Upload to GitHub
+    runs-on: ubuntu-latest
+    needs: [artifact-build]
+    permissions: 
+      packages: write
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: packages
+      - run: ls .
+      - run: tree .
+      - run: |
+          dotnet nuget push "*.nupkg" \
+            --skip-duplicate \
+            -s https://nuget.pkg.github.com/dekoeky/index.json \
+            --api-key ${{ secrets.GITHUB_TOKEN }}
