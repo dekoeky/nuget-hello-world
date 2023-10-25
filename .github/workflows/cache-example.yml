@@ -89,7 +89,7 @@ jobs:
           dotnet pack dekoeky.hello-world --no-restore -c Release
 
       - run: ls 
-      - run: find . -type f \( -name "*.nupkg" -or -name "*.snupkg  \)
+      - run: find . -type f \( -name *.nupkg -or -name *.snupkg  \)
       - uses: actions/upload-artifact@v2
         with:
           name: packages
