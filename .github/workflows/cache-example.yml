@@ -1,0 +1,92 @@
+on:
+  workflow_dispatch:
+
+
+name: Cache Example
+
+jobs:
+  cache-build:
+    name: Build - With Cache
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - name: Restore dependencies
+        run: | 
+          dotnet restore dekoeky.hello-world.tests
+
+      - name: Build
+        run: | 
+          dotnet build dekoeky.hello-world.tests --no-restore -c Release
+      
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: dekoeky.hello-world.tests/bin/Release/*
+          key: ${{ github.sha }}
+
+  cache-use-build:
+    name: Re-use Cache
+    runs-on: ubuntu-latest
+    needs: [cache-build]
+
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+      - run: tree
+      - run: |
+          dotnet test dekoeky.hello-world.tests/bin/Release/net6.0/dekoeky.hello-world.tests.dll --no-restore --no-build
+          dotnet test dekoeky.hello-world.tests/bin/Release/net7.0/dekoeky.hello-world.tests.dll --no-restore --no-build
+          dotnet test dekoeky.hello-world.tests/bin/Release/net8.0/dekoeky.hello-world.tests.dll --no-restore --no-build
+
+  # artifact-build:
+  #   name: Build - With Artifact
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - run: npm ci
+  #     - run: npm run build
+  #     - uses: actions/upload-artifact@v2
+  #       with:
+  #         name: nextjs-build
+  #         path: ./.next
+
+  # artifact-use-build:
+  #   name: Re-use Artifact
+  #   runs-on: ubuntu-latest
+  #   needs: [artifact-build]
+
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - uses: actions/download-artifact@v2
+  #       with:
+  #         name: nextjs-build
+  #     - run: ls .
