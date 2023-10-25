@@ -3,9 +3,7 @@ on:
 
 
 name: Cache Example
-permissions: 
-  packages: 
-    write
+
 
 jobs:
   cache-build:
@@ -121,6 +119,8 @@ jobs:
     name: Upload to GitHub
     runs-on: ubuntu-latest
     needs: [artifact-build]
+    permissions: 
+      packages: write
     
     steps:
       - uses: actions/download-artifact@v2
