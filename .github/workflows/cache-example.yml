@@ -94,8 +94,8 @@ jobs:
         with:
           name: packages
           path: | 
-            dekoeky.hello-world/bin/**/*.nupkg
-            dekoeky.hello-world/bin/**/*.snupkg
+            dekoeky.hello-world/bin/Release/*.nupkg
+            dekoeky.hello-world/bin/Release/*.snupkg
 
   upload-nuget-org:
     name: Upload to NuGet.org
@@ -109,7 +109,7 @@ jobs:
       - run: ls .
       - run: tree .
       - run: |
-          dotnet nuget push "**\*.nupkg" \
+          dotnet nuget push "*.nupkg" \
             --skip-duplicate \
             -s https://api.nuget.org/v3/index.json \
             --api-key ${{ secrets.NUGET_API_KEY }}
@@ -126,7 +126,7 @@ jobs:
       - run: ls .
       - run: tree .
       - run: |
-          dotnet nuget push "**\*.nupkg" \
+          dotnet nuget push "*.nupkg" \
             --skip-duplicate \
             -s https://nuget.pkg.github.com/dekoeky/index.json \
             --api-key ${{ secrets.GITHUB_TOKEN }}
