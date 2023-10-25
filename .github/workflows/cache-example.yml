@@ -94,8 +94,8 @@ jobs:
         with:
           name: packages
           path: | 
-            *.nupkg
-            *.snupkg
+            dekoeky.hello-world/bin/**/*.nupkg
+            dekoeky.hello-world/bin/**/*.snupkg
 
   artifact-use-build:
     name: Re-use Artifact
