@@ -6,6 +6,7 @@
     <RootNamespace>dekoeky.hello_world.nuget_consumer</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
